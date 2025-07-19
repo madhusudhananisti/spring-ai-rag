@@ -8,3 +8,5 @@ spring:
 sfg:
   aiapp:
     vectorStorePath: E:\\Code\\vectorstore.json
+    documentsToLoad:
+      - classpath:/movies500.csv
