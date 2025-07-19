@@ -30,7 +30,7 @@ public class OpenAIServiceImpl implements OpenAIService {
     private Resource ragPromptTemplate;
 
     public Answer getAnswer(Question question) {
-        List<Document> documents = vectorStore.doSimilaritySearch(SearchRequest.builder().query(question.question()).topK(4).build());
+        List<Document> documents = vectorStore.doSimilaritySearch(SearchRequest.builder().query(question.question()).topK(5).build());
         List<String> contentList = documents.stream().map(Document::getContent).toList();
         log.info("ContentList :: \n :: " + contentList.toString());
         PromptTemplate template = new PromptTemplate(ragPromptTemplate);
