@@ -1,6 +1,7 @@
 spring:
   application:
-    name: spring-ai-rag
+    name: spring-ai-rag-expert
+  #Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
@@ -10,11 +11,8 @@ spring:
     chat:
       options:
         model: gpt-4-turbo
-
-
-
 sfg:
   aiapp:
     vectorStorePath: E:\\Code\\vectorstore.json
     documentsToLoad:
-      - classpath:/movies500.csv
+      - classpath:/movies500Trimmed.csv
